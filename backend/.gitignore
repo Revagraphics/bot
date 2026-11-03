@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 *.zip
+/bot.env
+/bot.env.*
+!/bot.env.example
 
 # Editor directories and files
 .vscode/*
