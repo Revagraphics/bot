@@ -1,5 +1,12 @@
-// const BASE_URL = `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000'}/api`;
-const BASE_URL = `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000'}/api`;
+const apiOrigin =
+  import.meta.env.VITE_API_BASE_URL ||
+  (import.meta.env.DEV ? 'http://localhost:5000' : '');
+
+if (!apiOrigin) {
+  throw new Error('VITE_API_BASE_URL must be set for production builds');
+}
+
+const BASE_URL = `${apiOrigin.replace(/\/+$/, '')}/api`;
 let adminAuthorization = null;
 
 export function setAdminCredentials(username, password) {
