@@ -1,5 +1,12 @@
 # React + Vite
 
+## API configuration
+
+The local `.env` file sets `VITE_API_BASE_URL` to the backend origin (without `/api`).
+For deployment, set `VITE_API_BASE_URL` in the frontend host's environment settings to
+the deployed backend origin, then rebuild the frontend. Do not commit `.env`; use
+`.env.example` as the template.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
