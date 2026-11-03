@@ -1,10 +1,6 @@
 const apiOrigin =
   import.meta.env.VITE_API_BASE_URL ||
-  (import.meta.env.DEV ? 'http://localhost:5000' : '');
-
-if (!apiOrigin) {
-  throw new Error('VITE_API_BASE_URL must be set for production builds');
-}
+  (import.meta.env.DEV ? 'http://localhost:5000' : 'https://bot-nfdy.onrender.com');
 
 const BASE_URL = `${apiOrigin.replace(/\/+$/, '')}/api`;
 let adminAuthorization = null;
